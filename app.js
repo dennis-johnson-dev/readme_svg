@@ -21,14 +21,14 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-/**
+/*
  * Routes
  */
 
 // JSON API
 
-app.get('/:username/:repo.svg', routes.index);
 app.get('/', routes.index);
+app.get('/:username/:repo.svg', routes.generate);
 
 /* Start Server */
 

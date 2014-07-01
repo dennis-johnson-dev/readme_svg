@@ -8,5 +8,16 @@ var childArgs = [
 ];
 
 exports.index = function(req, res) {
-  res.render('index', {status: '200 Ok'});
+  res.render('index', {status: '00 Ok'});
+};
+
+exports.generate = function(req, res) {
+  var data = [10, 20, 30 , 100];
+
+  /*
+  childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+  });
+  */
+
+  res.render('index', {status: '00 Ok', graphData: data});
 };

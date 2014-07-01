@@ -1,19 +1,30 @@
 $(document).ready(function() {
-  var jsonCircles = [
-    { "x_axis": 30, "y_axis": 30, "radius": 20, "color" : "green" },
-    { "x_axis": 70, "y_axis": 70, "radius": 20, "color" : "purple"},
-    { "x_axis": 110, "y_axis": 100, "radius": 20, "color" : "red"}];
- 
-  var svgContainer = d3.select("svg").attr("width", 200).attr("height", 200);
- 
-  var circles = svgContainer.selectAll("circle")
-                            .data(jsonCircles)
-                            .enter()
-                            .append("circle");
+  var roughText = $("#gdata").text().slice(1);
+  var data = roughText.slice(0,-1).split(',');
+  console.log(data);
 
-  var circleAttributes = circles
-                         .attr("cx", function (d) { return d.x_axis; })
-                         .attr("cy", function (d) { return d.y_axis; })
-                         .attr("r", function (d) { return d.radius; })
-                         .style("fill", function(d) { return d.color; });
+  var width = 440,
+      i = 0,
+      barHeight = 20;
+
+  var x = d3.scale.linear()
+    .domain([0, 400])
+    .range([400, 0]);
+
+  var chart = d3.select("svg")
+    .attr("width", width)
+    .attr("height", 200);
+
+  var bar = chart.selectAll("g")
+    .data(data)
+    .enter().append("g")
+      .attr("transform", function () {
+        return "translate(" + 110*i++ + ", 100) scale(1, -1)";
+      })
+      .append("rect")
+        .attr("width", 90)
+        .attr("height", function(d) {
+          return d;
+        });
+
 });
