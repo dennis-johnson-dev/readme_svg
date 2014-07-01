@@ -28,6 +28,7 @@ app.use(app.router);
 // JSON API
 
 app.get('/:username/:repo.svg', routes.index);
+app.get('/', routes.index);
 
 /* Start Server */
 
