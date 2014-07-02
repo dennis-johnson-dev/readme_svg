@@ -14,10 +14,14 @@ exports.index = function(req, res) {
 exports.generate = function(req, res) {
   var data = [10, 20, 30 , 100];
 
-  /*
   childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+    console.log(stdout);
   });
-  */
+
+  // render the page
+  // call the phantomjs script to read it
+  // return the response
 
   res.render('index', {status: '00 Ok', graphData: data});
+  console.log('after render');
 };
