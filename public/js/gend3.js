@@ -1,9 +1,10 @@
 $(document).ready(function() {
-  var roughText = $("#gdata").text().slice(1);
-  var data = roughText.slice(0,-1).split(',');
-  console.log(data);
+  // var roughText = $("#gdata").text().slice(1);
+  // var data = roughText.slice(0,-1).split(',');
+  // console.log(data);
+  var data = [1, 30, 40, 60, 90, 100];
 
-  var width = 440,
+  var width = 800,
       i = 0,
       barHeight = 20;
 
@@ -13,7 +14,7 @@ $(document).ready(function() {
 
   var chart = d3.select("svg")
     .attr("width", width)
-    .attr("height", 200);
+    .attr("height", 250);
 
   var bar = chart.selectAll("g")
     .data(data)
