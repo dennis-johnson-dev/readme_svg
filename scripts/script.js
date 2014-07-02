@@ -1,10 +1,13 @@
 var system = require('system');
 var args = system.args;
+var fs = require('fs');
 var data = args[1].split(',');
+var graphType = args[2];
 
 var page = require('webpage').create();
+console.log(fs.workingDirectory)
 
-page.open('http://localhost:3011', function(status) {
+page.open('./partials/' + graphType + '.html', function(status) {
 
   var test = page.evaluate(function(data) {
 
@@ -14,5 +17,6 @@ page.open('http://localhost:3011', function(status) {
     }, data);
 
   console.log(test);
+  console.log(status);
   phantom.exit();
 });

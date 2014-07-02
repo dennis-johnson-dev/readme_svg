@@ -5,7 +5,8 @@ var binPath = phantomjs.path;
 
 var childArgs = [
   path.join(__dirname, '../scripts/script.js'),
-  [10, 30, 40, 10]
+  [10, 30, 40, 10],
+  'bar'
 ];
 
 exports.index = function(req, res) {
