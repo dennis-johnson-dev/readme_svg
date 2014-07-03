@@ -7,6 +7,12 @@ Try and get an svg graph in a readme.
 
 For Testing Purposes, you can load the svg into an img tag
 
+### Installation
+
+````bash
+$ npm install
+````
+
 ````
 <img src="http://localhost:3011/waf/io/bar.svg" />
 ````
