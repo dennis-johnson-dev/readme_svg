@@ -5,9 +5,9 @@ var data = JSON.parse(args[1]).arr;
 var graphType = args[2];
 
 var page = require('webpage').create();
-page.open('./partials/' + graphType + '.html', function(status) {
+page.open('./graphs/html/container.html', function(status) {
   page.includeJs('http://d3js.org/d3.v3.min.js', function() {
-    page.injectJs('./public/js/d3/' + graphType + '.js');
+    page.injectJs('./graphs/d3/' + graphType + '.js');
 
       var output = page.evaluate(function(data) {
         graph(data);

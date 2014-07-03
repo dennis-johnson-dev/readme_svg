@@ -14,7 +14,7 @@ exports.generate = function(req, res) {
   console.log(req.params);
 
   var childArgs = [
-    path.join(__dirname, '../scripts/script.js'),
+    path.join(__dirname, '../phantom/generateSVG.js'),
     fixture,
     req.params.graphType
   ];
