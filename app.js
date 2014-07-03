@@ -7,7 +7,7 @@ var app = express();
 
 /**
  *  * Configuration
- *   
+ *
  */
 
 app.set('port', process.env.PORT || 3011);
@@ -28,7 +28,7 @@ app.use(app.router);
 // JSON API
 
 app.get('/', routes.index);
-app.get('/:username/:repo.svg', routes.generate);
+app.get('/:username/:repo/:graphType.svg', routes.generate);
 
 /* Start Server */
 
